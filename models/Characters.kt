@@ -1,46 +1,80 @@
 package models
 
-enum class Character(var cell: Cell, var isVisible: Boolean, var isSuspect: Boolean = true){
-    AlfredElyBeach(cell = TODO(), isVisible = TODO(), isSuspect = TODO()) {
-        override fun moveTo(cell: Cell) {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        }
+enum class Character(cell: Cell, isVisible: Boolean, isSuspect: Boolean = true){
+
+    AlfredElyBeach(TODO(), TODO()) {
+
+        fun constructMetroEntrance(cell: StreetSpace): Unit = TODO()
+
     },
-    CloudRider(cell = TODO(), isVisible = TODO(), isSuspect = TODO()) {
-        override fun moveTo(cell: Cell) {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        }
+
+    CloudRider(TODO(), TODO()) {
+
+        override fun moveTo(cell: Cell) = TODO()
+
+        fun constructBuildingSite(cell: StreetSpace): Unit = TODO()
+
     },
-    LewisHowardLatimer(cell = TODO(), isVisible = TODO(), isSuspect = TODO()) {
-        override fun moveTo(cell: Cell) {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        }
+
+    LewisHowardLatimer(TODO(), TODO()) {
+
+        fun installGaslamp(cell: StreetSpace): Unit = TODO()
+
     },
-    MrsEmmaGrant(cell = TODO(), isVisible = TODO(), isSuspect = TODO()) {
-        override fun moveTo(cell: Cell) {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        }
+
+    MrsEmmaGrant(TODO(), TODO()) {
+
+        fun createPark(cell: StreetSpace): Unit = TODO()
+
     },
-    JamesHCallahan(cell = TODO(), isVisible = TODO(), isSuspect = TODO()) {
-        override fun moveTo(cell: Cell) {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        }
+    JamesHCallahan(TODO(), TODO()) {
+
     },
-    MonkEastman(cell = TODO(), isVisible = TODO(), isSuspect = TODO()) {
-        override fun moveTo(cell: Cell) {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
+    MonkEastman(TODO(), TODO()) {
+
+        fun moveAnotherCharacter(character: Character, cell: Cell){
+            character.moveTo(cell)
         }
+
     },
-    FrancisJTumblety(cell = TODO(), isVisible = TODO(), isSuspect = TODO()) {
-        override fun moveTo(cell: Cell) {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
+    FrancisJTumblety(TODO(), TODO()) {
+
+        fun hypnotize(adjacent: Character, target: Character){
+            adjacent.moveTo(target.cell.also { target.moveTo(adjacent.cell) })
         }
+
     },
-    EdwardSmith(cell = TODO(), isVisible = TODO(), isSuspect = TODO()) {
-        override fun moveTo(cell: Cell) {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
+    EdwardSmith(TODO(), TODO()) {
+
+        fun moveSteamer(from: PortSpace, to: PortSpace){
+            from.hasSteamer = false
+            to.hasSteamer = true
         }
+
     };
 
-    abstract fun moveTo(cell: Cell): Unit
+    var cell: Cell = cell
+        private set
+
+    var isVisible: Boolean = isVisible
+        private set
+
+    var isSuspect: Boolean = isSuspect
+        private set
+
+    open fun moveTo(cell: Cell) {
+        this.cell = cell
+    }
+
+    fun swapVisibility(){
+        this.isVisible = !this.isVisible
+    }
+
+    fun exonerate(){
+        this.isSuspect = false
+    }
+
 }

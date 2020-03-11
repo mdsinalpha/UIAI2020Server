@@ -8,21 +8,24 @@ object CardDealer{
     fun deal(turn: Int): MutableList<Character> {
         val leftCards = Character.values().toMutableList()
         return if(turn % 2 == 0) {
-            val tempArray = ArrayList<Character>()
+            previousCards.clear()
             for(i in 1..4)
-                tempArray.add(leftCards.removeAt(Random(leftCards.size).nextInt()))
-            previousCards = tempArray
+                previousCards.add(leftCards.removeAt(Random(leftCards.size).nextInt()))
             leftCards
-        } else leftCards
+        } else previousCards
     }
 }
 
-class Game(private var round: Int = 1, private var turn: Int = 1, private var jackVisibility: Boolean = true) {
+object Game {
+    private var round: Int = 1
+    private var turn: Int = 1
+    private var jackVisibility: Boolean = true
     private var cards: MutableList<Character> = CardDealer.deal(turn)
-    private var visibleCharacters: List<Character> = TODO()
-    private var invisibleCharacters: List<Character> = TODO()
-    private var innocentCharacters: List<Character> = TODO()
-
+    private var visibleCharacters: MutableList<Character> = mutableListOf(Character.AlfredElyBeach, Character.CloudRider,
+        Character.EdwardSmith, Character.JamesHCallahan, Character.LewisHowardLatimer, Character.MrsEmmaGrant)
+    private var invisibleCharacters: MutableList<Character>
+            = mutableListOf<Character>(Character.FrancisJTumblety, Character.MonkEastman)
+    private var innocentCharacters: MutableList<Character> = ArrayList<Character>()
     fun run(): Unit = TODO()
 }
 

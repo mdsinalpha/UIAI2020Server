@@ -82,16 +82,19 @@ enum class Character(cell: Cell, isVisible: Boolean, isSuspect: Boolean = true){
 }
 
 object Informant {
+
     var cell: Cell = LibertyIsland
         private set
+
     var mute: Boolean = true
+
     private val innocents: MutableList<Character> = Character.values().toMutableList()
 
     fun move(cell: Cell) {
         this.cell = cell
     }
 
-    fun removeJack(character: Character): Boolean = innocents.remove(character)
+    fun removeJack(jack: Character): Boolean = innocents.remove(jack)
 
     fun leakInnocent() : Character = innocents.removeAt(Random(innocents.size).nextInt())
 }

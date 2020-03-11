@@ -37,3 +37,10 @@ enum class Tile(val cells: MutableList<StreetSpace>) {
     GasLamp(ArrayList<StreetSpace>()),
     Park(ArrayList<StreetSpace>())
 }
+
+class InvestigationTile private constructor(val blockedCells: Pair<Cell, Cell>) {
+    companion object {
+        val InvestigationTile1: InvestigationTile = TODO()
+        val InvestigationTile2: InvestigationTile = TODO()
+    }
+}

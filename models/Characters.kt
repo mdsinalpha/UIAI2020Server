@@ -1,5 +1,7 @@
 package models
 
+import kotlin.random.Random
+
 enum class Character(cell: Cell, isVisible: Boolean, isSuspect: Boolean = true){
 
     AlfredElyBeach(TODO(), TODO()) {
@@ -80,7 +82,16 @@ enum class Character(cell: Cell, isVisible: Boolean, isSuspect: Boolean = true){
 }
 
 object Informant {
-    var cell: Cell = TODO()
+    var cell: Cell = LibertyIsland
+        private set
     var mute: Boolean = true
-    val innocents: MutableList<Character> = Character.values().toMutableList()
+    private val innocents: MutableList<Character> = Character.values().toMutableList()
+
+    fun move(cell: Cell) {
+        this.cell = cell
+    }
+
+    fun removeJack(character: Character): Boolean = innocents.remove(character)
+
+    fun leakInnocent() : Character = innocents.removeAt(Random(innocents.size).nextInt())
 }

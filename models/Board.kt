@@ -9,10 +9,20 @@ class StreetSpace(position: Position, adjacents: List<Cell>,
 
 class QuaysideSpace private constructor(position: Position,
                                         adjacents: List<Cell>): Cell(position, adjacents){
-
     companion object{
         val QuaysideSpace1: QuaysideSpace = TODO()
         val QuaysideSpace2: QuaysideSpace = TODO()
         val QuaysideSpace3: QuaysideSpace = TODO()
+    }
+}
+
+class PortSpace private constructor(position: Position, adjacents: List<Cell>,
+                                    var hasSteamer: Boolean = false): Cell(position, adjacents){
+    companion object{
+        val PortSpace1: PortSpace = TODO()
+        val PortSpace2: PortSpace = TODO()
+        val PortSpace3: PortSpace = TODO()
+        val PortSpace4: PortSpace = TODO()
+        val PortSpace5: PortSpace = TODO()
     }
 }

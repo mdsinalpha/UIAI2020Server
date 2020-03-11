@@ -69,7 +69,7 @@ enum class Character(cell: Cell, isVisible: Boolean, isSuspect: Boolean = true){
         this.cell = cell
     }
 
-    fun swapVisibility(){
+    fun toggleVisibility(){
         this.isVisible = !this.isVisible
     }
 

@@ -28,3 +28,5 @@ class PortSpace private constructor(position: Position, adjacents: List<Cell>,
 }
 
 object LibertyIsland: Cell(TODO(), TODO())
+
+object LandExit: Cell(TODO(), TODO())

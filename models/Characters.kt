@@ -31,6 +31,8 @@ enum class Character(cell: Cell, isVisible: Boolean, isSuspect: Boolean = true){
     },
     JamesHCallahan(TODO(), TODO()) {
 
+        fun moveInvestigationTile(tile: InvestigationTile, cells: Pair<StreetSpace, StreetSpace>): Unit = TODO()
+
     },
 
     MonkEastman(TODO(), TODO()) {

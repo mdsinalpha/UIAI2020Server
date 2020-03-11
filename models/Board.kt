@@ -26,3 +26,5 @@ class PortSpace private constructor(position: Position, adjacents: List<Cell>,
         val PortSpace5: PortSpace = TODO()
     }
 }
+
+object LibertyIsland: Cell(TODO(), TODO())

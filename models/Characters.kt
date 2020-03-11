@@ -18,7 +18,7 @@ enum class Character(cell: Cell, isVisible: Boolean, isSuspect: Boolean = true){
 
     LewisHowardLatimer(TODO(), TODO()) {
 
-        fun installGaslamp(cell: StreetSpace): Unit = TODO()
+        fun installGasLamp(cell: StreetSpace): Unit = TODO()
 
     },
 
@@ -77,4 +77,10 @@ enum class Character(cell: Cell, isVisible: Boolean, isSuspect: Boolean = true){
         this.isSuspect = false
     }
 
+}
+
+object Informant {
+    var cell: Cell = TODO()
+    var mute: Boolean = true
+    val innocents: MutableList<Character> = Character.values().toMutableList()
 }

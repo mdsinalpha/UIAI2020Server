@@ -98,7 +98,7 @@ enum class Tile(val cells: MutableList<StreetSpace>) {
     Park(ArrayList())
 }
 
-class InvestigationTile private constructor(val blockedCells: Pair<StreetSpace, StreetSpace>) {
+class InvestigationTile private constructor(var blockedCells: Pair<StreetSpace, StreetSpace>) {
     companion object {
         val InvestigationTile1 = InvestigationTile(StreetSpace.map[5 pos 2]!! to StreetSpace.map[6 pos 1]!!)
         val InvestigationTile2 = InvestigationTile(StreetSpace.map[11 pos 7]!! to StreetSpace.map[12 pos 8]!!)

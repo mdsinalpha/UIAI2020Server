@@ -3,20 +3,20 @@ import kotlin.random.Random
 
 object CardDealer{
 
-    private var previousCards: MutableList<Character> = ArrayList<Character>()
+    private var previousCards: MutableList<Character> = ArrayList()
 
-    fun deal(turn: Int): MutableList<Character> {
-        val leftCards = Character.values().toMutableList()
-        return if(turn % 2 == 0) {
+    fun deal(turn: Int): MutableList<Character> =
+        if(turn % 2 == 0) {
+            val leftCards = Character.values().toMutableList()
             previousCards.clear()
             for(i in 1..4)
                 previousCards.add(leftCards.removeAt(Random(leftCards.size).nextInt()))
             leftCards
         } else previousCards
-    }
 }
 
 object Game {
+
     private var round: Int = 1
     private var turn: Int = 1
     private var jackVisibility: Boolean = true
@@ -25,7 +25,8 @@ object Game {
         Character.EdwardSmith, Character.JamesHCallahan, Character.LewisHowardLatimer, Character.MrsEmmaGrant)
     private var invisibleCharacters: MutableList<Character>
             = mutableListOf<Character>(Character.FrancisJTumblety, Character.MonkEastman)
-    private var innocentCharacters: MutableList<Character> = ArrayList<Character>()
+    private var innocentCharacters: MutableList<Character> = ArrayList()
+
     fun run(): Unit = TODO()
 }
 

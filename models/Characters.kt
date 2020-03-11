@@ -4,13 +4,13 @@ import kotlin.random.Random
 
 enum class Character(cell: Cell, isVisible: Boolean, isSuspect: Boolean = true){
 
-    AlfredElyBeach(TODO(), TODO()) {
+    AlfredElyBeach(StreetSpace.map[5 pos 5]!!, true) {
 
         fun constructMetroEntrance(cell: StreetSpace): Unit = TODO()
 
     },
 
-    CloudRider(TODO(), TODO()) {
+    CloudRider(StreetSpace.map[9 pos 4]!!, true) {
 
         override fun moveTo(cell: Cell) = TODO()
 
@@ -18,24 +18,25 @@ enum class Character(cell: Cell, isVisible: Boolean, isSuspect: Boolean = true){
 
     },
 
-    LewisHowardLatimer(TODO(), TODO()) {
+    LewisHowardLatimer(StreetSpace.map[6 pos 4]!!, true) {
 
         fun installGasLamp(cell: StreetSpace): Unit = TODO()
 
     },
 
-    MrsEmmaGrant(TODO(), TODO()) {
+    MrsEmmaGrant(StreetSpace.map[10 pos 3]!!, true) {
 
         fun createPark(cell: StreetSpace): Unit = TODO()
 
     },
-    JamesHCallahan(TODO(), TODO()) {
+
+    JamesHCallahan(StreetSpace.map[6 pos 3]!!, true) {
 
         fun moveInvestigationTile(tile: InvestigationTile, cells: Pair<StreetSpace, StreetSpace>): Unit = TODO()
 
     },
 
-    MonkEastman(TODO(), TODO()) {
+    MonkEastman(StreetSpace.map[8 pos 2]!!, false) {
 
         fun moveAnotherCharacter(character: Character, cell: Cell){
             character.moveTo(cell)
@@ -43,7 +44,7 @@ enum class Character(cell: Cell, isVisible: Boolean, isSuspect: Boolean = true){
 
     },
 
-    FrancisJTumblety(TODO(), TODO()) {
+    FrancisJTumblety(StreetSpace.map[8 pos 5]!!, false) {
 
         fun hypnotize(adjacent: Character, target: Character){
             adjacent.moveTo(target.cell.also { target.moveTo(adjacent.cell) })
@@ -51,7 +52,7 @@ enum class Character(cell: Cell, isVisible: Boolean, isSuspect: Boolean = true){
 
     },
 
-    EdwardSmith(TODO(), TODO()) {
+    EdwardSmith(StreetSpace.map[10 pos 4]!!, true) {
 
         fun moveSteamer(from: PortSpace, to: PortSpace){
             from.hasSteamer = false

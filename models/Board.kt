@@ -49,7 +49,8 @@ class QuaysideSpace private constructor(position: Position,
         val map = listOf(
             QuaysideSpace(1 pos 2, 1 pos 1, 1 pos 3, 2 pos 1, 2 pos 2),
             QuaysideSpace(3 pos 1, 2 pos 1, 3 pos 2, 4 pos 2, 4 pos 1),
-            QuaysideSpace(7 pos 1, 6 pos 1, 7 pos 2, 8 pos 1)
+            QuaysideSpace(7 pos 1, 6 pos 1, 7 pos 2, 8 pos 1),
+            QuaysideSpace(5 pos 8, 4 pos 6, 5 pos 7, 6 pos 7)
         ).map { it.position to it }.toMap()
     }
 

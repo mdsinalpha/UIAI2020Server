@@ -30,3 +30,10 @@ class PortSpace private constructor(position: Position, adjacents: List<Cell>,
 object LibertyIsland: Cell(TODO(), TODO())
 
 object LandExit: Cell(TODO(), TODO())
+
+enum class Tile(val cells: MutableList<StreetSpace>) {
+    BuildingSite(ArrayList<StreetSpace>()),
+    MetroEntrance(ArrayList<StreetSpace>()),
+    GasLamp(ArrayList<StreetSpace>()),
+    Park(ArrayList<StreetSpace>())
+}

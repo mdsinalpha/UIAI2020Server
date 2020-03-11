@@ -6,10 +6,7 @@ enum class Character(cell: Cell, isVisible: Boolean, isSuspect: Boolean = true){
 
     AlfredElyBeach(StreetSpace.map[5 pos 5]!!, true) {
 
-        fun constructMetroEntrance(cell: StreetSpace) {
-            cell.tile = Tile.MetroEntrance
-            Tile.MetroEntrance.cells.add(cell)
-        }
+        fun constructMetroEntrance(cell: StreetSpace): Unit = TODO()
 
     },
 
@@ -17,37 +14,25 @@ enum class Character(cell: Cell, isVisible: Boolean, isSuspect: Boolean = true){
 
         override fun moveTo(cell: Cell) = TODO()
 
-        fun constructBuildingSite(cell: StreetSpace) {
-            cell.tile = Tile.BuildingSite
-            Tile.BuildingSite.cells.add(cell)
-        }
+        fun constructBuildingSite(cell: StreetSpace): Unit = TODO()
 
     },
 
     LewisHowardLatimer(StreetSpace.map[6 pos 4]!!, true) {
 
-        fun installGasLamp(cell: StreetSpace) {
-            cell.tile = Tile.GasLamp
-            Tile.GasLamp.cells.add(cell)
-        }
+        fun installGasLamp(cell: StreetSpace): Unit = TODO()
 
     },
 
     MrsEmmaGrant(StreetSpace.map[10 pos 3]!!, true) {
 
-        fun createPark(cell: StreetSpace): Unit {
-            cell.tile?.cells?.remove(cell)
-            cell.tile = Tile.Park
-            Tile.Park.cells.add(cell)
-        }
+        fun createPark(cell: StreetSpace): Unit = TODO()
 
     },
 
     JamesHCallahan(StreetSpace.map[6 pos 3]!!, true) {
 
-        fun moveInvestigationTile(tile: InvestigationTile, cells: Pair<StreetSpace, StreetSpace>) {
-            tile.blockedCells = cells
-        }
+        fun moveInvestigationTile(tile: InvestigationTile, cells: Pair<StreetSpace, StreetSpace>): Unit = TODO()
 
     },
 

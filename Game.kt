@@ -19,6 +19,7 @@ object Game {
 
     private var round: Int = 1
     private var turn: Int = 1
+    private lateinit var Jack: Character
     private var jackVisibility: Boolean = true
     private var cards: MutableList<Character> = CardDealer.deal(turn)
     private var visibleCharacters: MutableList<Character> = mutableListOf(Character.AlfredElyBeach, Character.CloudRider,

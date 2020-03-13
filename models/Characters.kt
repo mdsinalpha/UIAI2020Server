@@ -6,7 +6,10 @@ enum class Character(cell: Cell, isVisible: Boolean, isSuspect: Boolean = true){
 
     AlfredElyBeach(TODO(), true) {
 
-        fun constructMetroEntrance(cell: StreetSpace): Unit = TODO()
+        fun constructMetroEntrance(cell: StreetSpace) {
+            cell.tile = Tile.MetroEntrance
+            Tile.MetroEntrance.cells.add(cell)
+        }
 
     },
 
@@ -14,25 +17,39 @@ enum class Character(cell: Cell, isVisible: Boolean, isSuspect: Boolean = true){
 
         override fun moveTo(cell: Cell) = TODO()
 
-        fun constructBuildingSite(cell: StreetSpace): Unit = TODO()
+        fun constructBuildingSite(cell: StreetSpace) {
+            cell.tile = Tile.MetroEntrance
+            Tile.MetroEntrance.cells.add(cell)
+        }
 
     },
 
     LewisHowardLatimer(TODO(), true) {
 
-        fun installGasLamp(cell: StreetSpace): Unit = TODO()
+        fun installGasLamp(cell: StreetSpace) {
+            cell.tile = Tile.GasLamp
+            Tile.GasLamp.cells.add(cell)
+        }
 
     },
 
     MrsEmmaGrant(TODO(), true) {
 
-        fun createPark(cell: StreetSpace): Unit = TODO()
+        fun createPark(cell: StreetSpace) {
+            cell.tile?.let {
+                it.cells.remove(cell)
+                cell.tile = Tile.Park
+                Tile.Park.cells.add(cell)
+            }
+        }
 
     },
 
     JamesHCallahan(TODO(), true) {
 
-        fun moveInvestigationTile(tile: InvestigationTile, cells: Pair<StreetSpace, StreetSpace>): Unit = TODO()
+        fun moveInvestigationTile(tile: InvestigationTile, cells: Pair<StreetSpace, StreetSpace>) {
+            tile.blockedCells = cells
+        }
 
     },
 

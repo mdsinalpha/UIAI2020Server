@@ -18,8 +18,8 @@ enum class Character(cell: Cell, isVisible: Boolean, isSuspect: Boolean = true){
         override fun moveTo(cell: Cell) = TODO()
 
         fun constructBuildingSite(cell: StreetSpace) {
-            cell.tile = Tile.MetroEntrance
-            Tile.MetroEntrance.cells.add(cell)
+            cell.tile = Tile.BuildingSite
+            Tile.BuildingSite.cells.add(cell)
         }
 
     },

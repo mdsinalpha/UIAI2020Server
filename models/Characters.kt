@@ -4,7 +4,7 @@ import kotlin.random.Random
 
 enum class Character(cell: Cell, isVisible: Boolean, isSuspect: Boolean = true){
 
-    AlfredElyBeach(TODO(), true) {
+    AlfredElyBeach(StreetSpace.map[5 pos 10]!!, true) {
 
         fun constructMetroEntrance(cell: StreetSpace) {
             cell.tile = Tile.MetroEntrance
@@ -13,7 +13,7 @@ enum class Character(cell: Cell, isVisible: Boolean, isSuspect: Boolean = true){
 
     },
 
-    CloudRider(TODO(), true) {
+    CloudRider(StreetSpace.map[9 pos 8]!!, true) {
 
         override fun moveTo(cell: Cell) = TODO()
 
@@ -24,7 +24,7 @@ enum class Character(cell: Cell, isVisible: Boolean, isSuspect: Boolean = true){
 
     },
 
-    LewisHowardLatimer(TODO(), true) {
+    LewisHowardLatimer(StreetSpace.map[5 pos 8]!!, true) {
 
         fun installGasLamp(cell: StreetSpace) {
             cell.tile = Tile.GasLamp
@@ -33,7 +33,7 @@ enum class Character(cell: Cell, isVisible: Boolean, isSuspect: Boolean = true){
 
     },
 
-    MrsEmmaGrant(TODO(), true) {
+    MrsEmmaGrant(StreetSpace.map[10 pos 7]!!, true) {
 
         fun createPark(cell: StreetSpace) {
             cell.tile?.let {
@@ -45,7 +45,7 @@ enum class Character(cell: Cell, isVisible: Boolean, isSuspect: Boolean = true){
 
     },
 
-    JamesHCallahan(TODO(), true) {
+    JamesHCallahan(StreetSpace.map[6 pos 9]!!, true) {
 
         fun moveInvestigationTile(tile: InvestigationTile, cells: Pair<StreetSpace, StreetSpace>) {
             tile.blockedCells = cells
@@ -53,7 +53,7 @@ enum class Character(cell: Cell, isVisible: Boolean, isSuspect: Boolean = true){
 
     },
 
-    MonkEastman(TODO(), false) {
+    MonkEastman(StreetSpace.map[8 pos 5]!!, false) {
 
         fun moveAnotherCharacter(character: Character, cell: Cell){
             character.moveTo(cell)
@@ -61,7 +61,7 @@ enum class Character(cell: Cell, isVisible: Boolean, isSuspect: Boolean = true){
 
     },
 
-    FrancisJTumblety(TODO(), false) {
+    FrancisJTumblety(StreetSpace.map[8 pos 11]!!, false) {
 
         fun hypnotize(adjacent: Character, target: Character){
             adjacent.moveTo(target.cell.also { target.moveTo(adjacent.cell) })
@@ -69,7 +69,7 @@ enum class Character(cell: Cell, isVisible: Boolean, isSuspect: Boolean = true){
 
     },
 
-    EdwardSmith(TODO(), true) {
+    EdwardSmith(StreetSpace.map[10 pos 9]!!, true) {
 
         fun moveSteamer(from: PortSpace, to: PortSpace){
             from.hasSteamer = false

@@ -154,3 +154,9 @@ class InvestigationTile private constructor(var blockedCells: Pair<StreetSpace, 
     }
 }
 
+object Board{
+
+    val map = StreetSpace.map + QuaysideSpace.map + PortSpace.map + listOf(LibertyIsland, LandExit).map { it.position to it }.toMap()
+    val graph = Graph<Cell>(map.size)
+    val tiles = (Tile.BuildingSite.cells + Tile.MetroEntrance.cells + Tile.GasLamp.cells + Tile.Park.cells).map { it.position to it.tile }.toMap()
+}
